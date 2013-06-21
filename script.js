@@ -70,3 +70,17 @@ function validateDate(inputField,helptext){
     return validateRegEx(/^\d{2}\/\d{2}\/\d{4}$/,inputField.value, helptext, "Please fill in a useable dateformat");
 
 }
+
+function validatePhone(inputField,helptext){
+    if (!emptyFields(inputField,helptext))
+        return false;
+    return validateRegEx(/^\d{4}-\d{6}$/,inputField.value,helptext, "Please fill in a proper phonenumber");
+
+}
+
+
+function validateEmail(inputField,helptext){
+    if(!emptyFields(inputField,helptext))
+        return false;
+    return validateRegEx(/^\w+@\w+.\w{2,3}$/,inputField.value,helptext,"Please fill in a proper emailadres")
+}
