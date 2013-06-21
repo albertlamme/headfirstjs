@@ -1,17 +1,47 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Untitled Document</title>
-</head>
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="script.js"></script>
+  <head>
+    <title>Bannerocity - Personalized Online Sky Banners</title>
 
-<body onload="alert('Hello, my name is iRock!');">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
 
-    <div class="imageContainer">
-        <img onclick="touchRock();" src="images/rock.png" alt="Rock" class="imageRock" id="rockImg">
+  <body>
+    <div class="heading">
+      <img id="logo" src="images/logo.png" alt="Bannerocity" />
     </div>
 
-</body>
+    <form name="orderform" action="bannerocity.php" method="POST">
+      <div class="field">
+        Enter the banner message:
+        <input id="message" name="message" type="text" size="32" onblur="validateLength(1,32,this,document.getElementById('messageError'));"/>
+        <span id="messageError" class="error"></span>
+      </div>
+      <div class="field">
+        Enter ZIP code of the location:
+        <input id="zipcode" name="zipcode" type="text" size="5" onblur="validateZip(this,document.getElementById('zipError'));"/>
+        <span id="zipError" class="error"></span>
+      </div>
+      <div class="field">
+        Enter the date for the message to be shown:
+        <input id="date" name="date" type="text" size="10" onblur= "validateDate(this,document.getElementById('dateError'));"/>
+        <span id="dateError" class="error" />
+      </div>
+      <div class="field">
+        Enter your name:
+        <input id="name" name="name" type="text" size="32" onblur="emptyFields(this,document.getElementById('nameError'));"/>
+        <span id="nameError" class="error"></span>
+      </div>
+      <div class="field">
+        Enter your phone number:
+        <input id="phone" name="phone" type="text" size="12"/>
+      </div>
+      <div class="field">
+        Enter your email address:
+        <input id="email" name="email" type="text" size="32"/>
+      </div>
+      <input type="button" value="Order Banner" onclick="placeOrder(this.form);"/>
+    </form>
+  </body>
 </html>

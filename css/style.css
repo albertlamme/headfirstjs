@@ -1,4 +1,17 @@
-.imageRock{
-    margin:100px 0px 0px 100px;
-    cursor:pointer;
+body {
+  font:14px arial;
+  text-align:center;
+}
+
+div.heading {
+  margin-bottom:25px;
+}
+
+div.field {
+  margin-bottom:5px;
+  text-align:left;
+}
+span.error {
+  color:#ff0000;
+  font-style:italic;
 }
