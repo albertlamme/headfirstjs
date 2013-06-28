@@ -7,8 +7,8 @@
     <script type="text/javascript" src="script.js"></script>
   </head>
 
-  <body>
-    <div class="heading">
+  <body onload="showBlog(2);">
+   <!-- <div class="heading">
       <img id="logo" src="images/logo.png" alt="Bannerocity" />
     </div>
 
@@ -44,6 +44,14 @@
         <span id="emailError" class="error"></span>
       </div>
       <input type="button" value="Order Banner" onclick="placeOrder(this.form);"/>
-    </form>
+    </form>-->
+    <input type="button" id="search" value="Search the Blog" onclick="searchBlog();" />
+    <input type="text" id="searchtext" name="searchtext" value="" />
+    <input type="button" id="random" value="Selact a random blog" onclick="randomBlog();" />
+    <h3>YouCube - The blog for Cube Puzzlers</h3>
+    <img src="images/cube.png" alt="youcube">
+    <div id="blog"></div>
+    <input type="button" id="showall" value="Show all Blog entries" onclick="showBlog();" />
+    
   </body>
 </html>
